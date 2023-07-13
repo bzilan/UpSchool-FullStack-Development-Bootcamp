@@ -1,0 +1,122 @@
+2023-05-09 21:29:11.257 +03:00 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-09 21:29:15.079 +03:00 [INF] Now listening on: https://localhost:7261
+2023-05-09 21:29:15.080 +03:00 [INF] Now listening on: http://localhost:5006
+2023-05-09 21:29:15.082 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 21:29:15.083 +03:00 [INF] Hosting environment: Development
+2023-05-09 21:29:15.084 +03:00 [INF] Content root path: C:\Users\Asus\Desktop\Up-School-FSD-1\Ödev-3\UpStorage\src\WebApi
+2023-05-09 21:29:28.886 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger - -
+2023-05-09 21:29:30.045 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger - - - 301 0 - 1171.8218ms
+2023-05-09 21:29:30.089 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-05-09 21:29:31.616 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/swagger-ui.css - -
+2023-05-09 21:29:31.616 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/swagger-ui-bundle.js - -
+2023-05-09 21:29:31.616 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/swagger-ui-standalone-preset.js - -
+2023-05-09 21:29:31.620 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-05-09 21:29:31.694 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 74.3076ms
+2023-05-09 21:29:31.708 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 1618.4929ms
+2023-05-09 21:29:31.908 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-05-09 21:29:31.918 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/swagger-ui.css - - - 200 143943 text/css 302.4234ms
+2023-05-09 21:29:31.928 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-05-09 21:29:32.033 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-05-09 21:29:32.049 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 428.9474ms
+2023-05-09 21:29:32.071 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-05-09 21:29:32.074 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/swagger-ui-bundle.js - - - 200 1096145 text/javascript 457.7348ms
+2023-05-09 21:29:32.432 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 503.5767ms
+2023-05-09 21:29:32.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-05-09 21:29:32.979 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 377.9500ms
+2023-05-09 21:29:53.393 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Math?number=52 - -
+2023-05-09 21:29:53.516 +03:00 [INF] Executing endpoint 'WebApi.Controllers.MathController.IsEven (WebApi)'
+2023-05-09 21:29:53.976 +03:00 [INF] Route matched with {action = "IsEven", controller = "Math"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult IsEven(Int32) on controller WebApi.Controllers.MathController (WebApi).
+2023-05-09 21:29:53.984 +03:00 [ERR] Unable to resolve service for type 'Application.Common.Helpers.MathHelper' while attempting to activate 'WebApi.Controllers.MathController'.
+System.InvalidOperationException: Unable to resolve service for type 'Application.Common.Helpers.MathHelper' while attempting to activate 'WebApi.Controllers.MathController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method4(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2023-05-09 21:29:54.794 +03:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Models.Errors.ApiErrorDto'.
+2023-05-09 21:29:54.825 +03:00 [INF] Executed action WebApi.Controllers.MathController.IsEven (WebApi) in 841.0593ms
+2023-05-09 21:29:54.830 +03:00 [INF] Executed endpoint 'WebApi.Controllers.MathController.IsEven (WebApi)'
+2023-05-09 21:29:54.831 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Math?number=52 - - - 500 - application/json;+charset=utf-8 1438.6415ms
+2023-05-09 21:31:55.512 +03:00 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-09 21:31:56.085 +03:00 [INF] Now listening on: https://localhost:7261
+2023-05-09 21:31:56.088 +03:00 [INF] Now listening on: http://localhost:5006
+2023-05-09 21:31:56.095 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 21:31:56.129 +03:00 [INF] Hosting environment: Development
+2023-05-09 21:31:56.130 +03:00 [INF] Content root path: C:\Users\Asus\Desktop\Up-School-FSD-1\Ödev-3\UpStorage\src\WebApi
+2023-05-09 21:31:58.704 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-05-09 21:31:59.534 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 829.4454ms
+2023-05-09 21:31:59.634 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-05-09 21:31:59.636 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-05-09 21:31:59.681 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 45.7312ms
+2023-05-09 21:32:00.098 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 464.7646ms
+2023-05-09 21:32:00.479 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-05-09 21:32:01.009 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Math" for actions - WebApi.Controllers.MathController.IsEven (WebApi),WebApi.Controllers.MathController.Sum (WebApi). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 21:32:01.126 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 647.1347ms
+2023-05-09 21:32:41.512 +03:00 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-09 21:32:42.230 +03:00 [INF] Now listening on: https://localhost:7261
+2023-05-09 21:32:42.235 +03:00 [INF] Now listening on: http://localhost:5006
+2023-05-09 21:32:42.242 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 21:32:42.244 +03:00 [INF] Hosting environment: Development
+2023-05-09 21:32:42.245 +03:00 [INF] Content root path: C:\Users\Asus\Desktop\Up-School-FSD-1\Ödev-3\UpStorage\src\WebApi
+2023-05-09 21:32:44.014 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-05-09 21:32:44.585 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 577.3430ms
+2023-05-09 21:32:44.653 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-05-09 21:32:44.658 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-05-09 21:32:44.681 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 28.0205ms
+2023-05-09 21:32:44.830 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 174.4785ms
+2023-05-09 21:32:44.968 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-05-09 21:32:45.300 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 331.9522ms
+2023-05-09 21:35:47.790 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7261/api/Math application/json 24
+2023-05-09 21:35:47.812 +03:00 [INF] Executing endpoint 'WebApi.Controllers.MathController.Sum (WebApi)'
+2023-05-09 21:35:47.839 +03:00 [INF] Route matched with {action = "Sum", controller = "Math"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Sum(Int32[]) on controller WebApi.Controllers.MathController (WebApi).
+2023-05-09 21:35:47.848 +03:00 [ERR] Unable to resolve service for type 'Application.Common.Helpers.MathHelper' while attempting to activate 'WebApi.Controllers.MathController'.
+System.InvalidOperationException: Unable to resolve service for type 'Application.Common.Helpers.MathHelper' while attempting to activate 'WebApi.Controllers.MathController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method4(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2023-05-09 21:35:47.902 +03:00 [INF] Executing ObjectResult, writing value of type 'Application.Common.Models.Errors.ApiErrorDto'.
+2023-05-09 21:35:47.921 +03:00 [INF] Executed action WebApi.Controllers.MathController.Sum (WebApi) in 66.825ms
+2023-05-09 21:35:47.935 +03:00 [INF] Executed endpoint 'WebApi.Controllers.MathController.Sum (WebApi)'
+2023-05-09 21:35:47.937 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7261/api/Math application/json 24 - 500 - application/json;+charset=utf-8 147.0601ms
+2023-05-09 23:15:11.528 +03:00 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-09 23:15:13.616 +03:00 [INF] Now listening on: https://localhost:7261
+2023-05-09 23:15:13.628 +03:00 [INF] Now listening on: http://localhost:5006
+2023-05-09 23:15:13.635 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:15:13.638 +03:00 [INF] Hosting environment: Development
+2023-05-09 23:15:13.642 +03:00 [INF] Content root path: C:\Users\Asus\Desktop\Up-School-FSD-1\Ödev-3\UpStorage\src\WebApi
+2023-05-09 23:15:16.683 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-05-09 23:15:18.851 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 2167.0595ms
+2023-05-09 23:15:18.907 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-05-09 23:15:19.050 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 142.8732ms
+2023-05-09 23:15:19.089 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-05-09 23:15:19.257 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 167.7618ms
+2023-05-09 23:15:19.440 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-05-09 23:15:19.972 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 531.4206ms
+2023-05-09 23:15:28.833 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Math?number=26 - -
+2023-05-09 23:15:29.228 +03:00 [INF] Executing endpoint 'WebApi.Controllers.MathController.IsEven (WebApi)'
+2023-05-09 23:15:29.574 +03:00 [INF] Route matched with {action = "IsEven", controller = "Math"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult IsEven(Int32) on controller WebApi.Controllers.MathController (WebApi).
+2023-05-09 23:15:29.685 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2023-05-09 23:15:29.718 +03:00 [INF] Executed action WebApi.Controllers.MathController.IsEven (WebApi) in 122.1392ms
+2023-05-09 23:15:29.725 +03:00 [INF] Executed endpoint 'WebApi.Controllers.MathController.IsEven (WebApi)'
+2023-05-09 23:15:29.730 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Math?number=26 - - - 200 - application/json;+charset=utf-8 896.4529ms
+2023-05-09 23:15:44.637 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Math?number=26 - -
+2023-05-09 23:15:44.645 +03:00 [INF] Executing endpoint 'WebApi.Controllers.MathController.IsEven (WebApi)'
+2023-05-09 23:15:44.648 +03:00 [INF] Route matched with {action = "IsEven", controller = "Math"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult IsEven(Int32) on controller WebApi.Controllers.MathController (WebApi).
+2023-05-09 23:15:44.676 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Boolean'.
+2023-05-09 23:15:44.680 +03:00 [INF] Executed action WebApi.Controllers.MathController.IsEven (WebApi) in 6.8413ms
+2023-05-09 23:15:44.684 +03:00 [INF] Executed endpoint 'WebApi.Controllers.MathController.IsEven (WebApi)'
+2023-05-09 23:15:44.687 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Math?number=26 - - - 200 - application/json;+charset=utf-8 50.2853ms
