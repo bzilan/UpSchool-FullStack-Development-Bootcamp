@@ -1,0 +1,98 @@
+.main-segment {
+  padding: 50px !important;
+  margin: 0;
+  background-color: #F2F1ED;
+  box-shadow: 0 8px 16px 0 rgba(128, 15, 15, 0.2);
+  transition: 0.3s;
+  color: #B8CDD6 !important;
+  border-radius: 4px;
+  min-width: 500px;
+}
+
+.main-header {
+  color: #B8CDD6 !important;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.d-flex {
+  width: 100%;
+  min-width: 300px;
+  max-width: 600px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
+}
+
+h1 {
+  font-size: 3.2em !important;
+}
+
+label {
+  color: #B8CDD6 !important;
+  font-size: 1.4em !important;
+}
+
+.button-add {
+  background-color: transparent !important;
+  color: #B8CDD6 !important;
+  margin: 0px !important;
+  width: fit-content !important;
+  margin-left: -25px !important;
+}
+
+input[type="text"]{
+
+  margin: 0 !important;
+  color: #B8CDD6 !important;
+  border: 1px solid #CCA9BC;
+  border-radius: 3px;
+  outline: none;
+  padding: 10px 20px;
+
+}
+
+
+.completed-task {
+  text-decoration: line-through;
+}
+
+.disabled-button {
+  color: #BBbbbb !important;
+}
+
+.category-dropdown {
+  width: max-content !important;
+  margin-right: 10px;
+}
+
+h4 {
+  padding-left: 5px;
+  margin-bottom: 0;
+  margin-top: 10px !important;
+}
+
+.list-item {
+  padding: 0;
+}
+
+.todo-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.todoText {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 5px;
+}
+
+.filter-dropdown {
+  margin-left: 10px;
+}
