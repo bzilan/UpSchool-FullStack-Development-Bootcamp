@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpSchool.Console", "UpSchool.Console\UpSchool.Console.csproj", "{6337ABC9-A44E-4803-A5A5-D133C9F82D37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpSchool.Domain", "UpSchool.Domain\UpSchool.Domain.csproj", "{0639E6D6-71E4-4AAD-9AD7-46D6119F1A82}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuckySister.Console", "LuckySister.Console\LuckySister.Console.csproj", "{4B6694EA-861F-46E0-94CD-8B580D059BDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpSchool.Wasm", "UpSchool.Wasm\UpSchool.Wasm.csproj", "{19FE582B-D458-48FB-BC3A-A8F63694A3BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UPSimplePasswordGenerator", "UPSimplePasswordGenerator\UPSimplePasswordGenerator.csproj", "{22577C5E-5DCE-4B0D-9940-4C92686E241C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpSchool.WebApi", "UpSchool.WebApi\UpSchool.WebApi.csproj", "{77540084-98B6-448E-BB4D-AEF62DAB135F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6337ABC9-A44E-4803-A5A5-D133C9F82D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6337ABC9-A44E-4803-A5A5-D133C9F82D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6337ABC9-A44E-4803-A5A5-D133C9F82D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6337ABC9-A44E-4803-A5A5-D133C9F82D37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0639E6D6-71E4-4AAD-9AD7-46D6119F1A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0639E6D6-71E4-4AAD-9AD7-46D6119F1A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0639E6D6-71E4-4AAD-9AD7-46D6119F1A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0639E6D6-71E4-4AAD-9AD7-46D6119F1A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6694EA-861F-46E0-94CD-8B580D059BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6694EA-861F-46E0-94CD-8B580D059BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6694EA-861F-46E0-94CD-8B580D059BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6694EA-861F-46E0-94CD-8B580D059BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19FE582B-D458-48FB-BC3A-A8F63694A3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FE582B-D458-48FB-BC3A-A8F63694A3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19FE582B-D458-48FB-BC3A-A8F63694A3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19FE582B-D458-48FB-BC3A-A8F63694A3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22577C5E-5DCE-4B0D-9940-4C92686E241C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22577C5E-5DCE-4B0D-9940-4C92686E241C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22577C5E-5DCE-4B0D-9940-4C92686E241C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22577C5E-5DCE-4B0D-9940-4C92686E241C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77540084-98B6-448E-BB4D-AEF62DAB135F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77540084-98B6-448E-BB4D-AEF62DAB135F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77540084-98B6-448E-BB4D-AEF62DAB135F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77540084-98B6-448E-BB4D-AEF62DAB135F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1F7A6F5-0FB5-4DC2-B41F-CB15C326BC86}
+	EndGlobalSection
+EndGlobal
