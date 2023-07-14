@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Application.Common.Dtos;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using Domain.Dtos;
 using WebApi.Hubs;
-using WebApi.Controllers;
 
-namespace UpSchool.WebApi.Controllers
+namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -27,4 +26,4 @@ namespace UpSchool.WebApi.Controllers
             return Ok();
         }
     }
-}
+} 
