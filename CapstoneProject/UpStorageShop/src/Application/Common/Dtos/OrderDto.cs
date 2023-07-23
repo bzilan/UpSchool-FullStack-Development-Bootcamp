@@ -10,6 +10,7 @@ namespace Application.Common.Dtos
         public int TotalFoundAmount { get; set; }
         public ProductCrawlType ProductCrawlType { get; set; }
         public DateTimeOffset CreatedOn { get; set; }
+        public string? CreatedByUserId { get; set; }
         public List<OrderEventDto> OrderEvents { get; set; }
         public List<ProductDto> Products { get; set; }
     }

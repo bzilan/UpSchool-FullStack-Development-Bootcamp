@@ -23,8 +23,8 @@ namespace Infrastructure.Persistence.Migrations.Application
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    PushNotification = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    EmailNotification = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    PushNotification = table.Column<bool>(type: "tinyint(1)", nullable: false, defaultValueSql: "0"),
+                    EmailNotification = table.Column<bool>(type: "tinyint(1)", nullable: false, defaultValueSql: "0"),
                     EmailAddress = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -47,8 +47,7 @@ namespace Infrastructure.Persistence.Migrations.Application
                     CreatedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DeletedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false, defaultValueSql: "0")
+                    DeletedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -66,8 +65,7 @@ namespace Infrastructure.Persistence.Migrations.Application
                     CreatedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DeletedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false, defaultValueSql: "0")
+                    DeletedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -97,8 +95,7 @@ namespace Infrastructure.Persistence.Migrations.Application
                     CreatedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: false),
                     CreatedByUserId = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DeletedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false, defaultValueSql: "0")
+                    DeletedOn = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -113,24 +110,9 @@ namespace Infrastructure.Persistence.Migrations.Application
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderEvents_IsDeleted",
-                table: "OrderEvents",
-                column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_OrderEvents_OrderId",
                 table: "OrderEvents",
                 column: "OrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_IsDeleted",
-                table: "Orders",
-                column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_IsDeleted",
-                table: "Products",
-                column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_Name",

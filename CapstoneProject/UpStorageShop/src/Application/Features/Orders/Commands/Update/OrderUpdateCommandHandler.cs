@@ -10,10 +10,11 @@ namespace Application.Features.Orders.Commands.Update
     public class OrderUpdateCommandHandler : IRequestHandler<OrderUpdateCommand, Response<Guid>>
     {
         private readonly IApplicationDbContext _applicationDbContext;
-
-        public OrderUpdateCommandHandler(IApplicationDbContext applicationDbContext)
+        private readonly IOrderHubService _orderHubService;
+        public OrderUpdateCommandHandler(IApplicationDbContext applicationDbContext, IOrderHubService orderHubService)
         {
             _applicationDbContext = applicationDbContext;
+            _orderHubService = orderHubService;
         }
 
         public async Task<Response<Guid>> Handle(OrderUpdateCommand request, CancellationToken cancellationToken)
@@ -27,7 +28,7 @@ namespace Application.Features.Orders.Commands.Update
             _applicationDbContext.Orders.Update(order);
 
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
-
+            await _orderHubService.UpdatedAsync(MapOrderToOrderDto(order), cancellationToken);
 
             return new Response<Guid>($"The order was successfully updated.");
         }

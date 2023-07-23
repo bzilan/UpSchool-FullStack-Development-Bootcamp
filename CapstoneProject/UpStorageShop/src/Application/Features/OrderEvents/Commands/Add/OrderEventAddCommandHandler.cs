@@ -20,6 +20,7 @@ namespace Application.Features.OrderEvents.Commands.Add
             {
                 OrderId = request.OrderId,
                 Status = request.Status,
+                CreatedOn = DateTimeOffset.Now,
             };
 
             await _applicationDbContext.OrderEvents.AddAsync(orderEvent, cancellationToken);

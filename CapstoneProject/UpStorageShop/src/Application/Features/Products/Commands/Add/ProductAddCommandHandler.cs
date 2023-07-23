@@ -25,7 +25,6 @@ namespace Application.Features.Products.Commands.Add
                 SalePrice= request.SalePrice,
                 IsOnSale = request.IsOnSale,
                 CreatedOn = DateTimeOffset.Now,
-                IsDeleted = false,
             };
             await _applicationDbContext.Products.AddAsync(product, cancellationToken);
             await _applicationDbContext.SaveChangesAsync(cancellationToken);

@@ -4,13 +4,12 @@ using Application.Features.Orders.Commands.Remove;
 using Application.Features.Orders.Commands.Update;
 using Application.Features.Orders.Queries.GetAll;
 using Application.Features.Orders.Queries.GetById;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
-    [Authorize]
+   
     public class OrdersController : ApiControllerBase
     {
         [HttpPost("Add")]
@@ -19,8 +18,8 @@ namespace WebApi.Controllers
             return Ok(await Mediator.Send(command));
         }
 
-        [HttpPost("CrawlerServiceExample")]
-        public async Task<IActionResult> CrawlerServiceExampleAsync(WorkerServiceNewOrderAddedDto newOrderAddedDto)
+        [HttpPost("CrawlerService")]
+        public async Task<IActionResult> CrawlerServiceAsync(WorkerServiceNewOrderAddedDto newOrderAddedDto)
         {
             return Ok();
         }

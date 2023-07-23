@@ -17,6 +17,5 @@ namespace Application.Features.Products.Queries.GetAll
         public decimal Price { get; set; }
 
         public decimal? SalePrice { get; set; }
-        public bool IsDeleted { get; set; }
     }
 }

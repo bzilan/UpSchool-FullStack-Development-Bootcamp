@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-CrawlerService-e3289607-b2f6-4dc1-aaf7-27aaa7be5122</UserSecretsId>
+    <UserSecretsId>dotnet-CrawlerService-1d653aff-7e37-4568-995d-67a9c058e40a</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

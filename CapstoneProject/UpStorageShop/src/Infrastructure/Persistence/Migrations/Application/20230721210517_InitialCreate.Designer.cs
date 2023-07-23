@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Persistence.Migrations.Application
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230714133512_InitialCreate")]
+    [Migration("20230721210517_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -38,11 +38,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                     b.Property<DateTimeOffset?>("DeletedOn")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint(1)")
-                        .HasDefaultValueSql("0");
-
                     b.Property<int>("ProductCrawlType")
                         .HasColumnType("int");
 
@@ -57,8 +52,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
 
                     b.ToTable("Orders", (string)null);
                 });
@@ -79,11 +72,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                     b.Property<DateTimeOffset?>("DeletedOn")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint(1)")
-                        .HasDefaultValueSql("0");
-
                     b.Property<Guid>("OrderId")
                         .HasColumnType("char(36)");
 
@@ -91,8 +79,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
 
                     b.HasIndex("OrderId");
 
@@ -114,11 +100,6 @@ namespace Infrastructure.Persistence.Migrations.Application
 
                     b.Property<DateTimeOffset?>("DeletedOn")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint(1)")
-                        .HasDefaultValueSql("0");
 
                     b.Property<bool>("IsOnSale")
                         .HasColumnType("tinyint(1)");
@@ -145,8 +126,6 @@ namespace Infrastructure.Persistence.Migrations.Application
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IsDeleted");
-
                     b.HasIndex("Name");
 
                     b.HasIndex("OrderId");
@@ -164,10 +143,14 @@ namespace Infrastructure.Persistence.Migrations.Application
                         .HasColumnType("longtext");
 
                     b.Property<bool>("EmailNotification")
-                        .HasColumnType("tinyint(1)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValueSql("0");
 
                     b.Property<bool>("PushNotification")
-                        .HasColumnType("tinyint(1)");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValueSql("0");
 
                     b.Property<string>("UserId")
                         .IsRequired()

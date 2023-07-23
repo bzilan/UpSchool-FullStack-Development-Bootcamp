@@ -10,12 +10,10 @@ namespace Application.Features.Orders.Queries.GetAll
     public class OrderGetAllQuery : IRequest<List<OrderGetAllDto>>
     {
         public Guid Id { get; set; }
-        public bool? IsDeleted { get; set; }
-        public OrderGetAllQuery(Guid id,bool? isDeleted)
+        public OrderGetAllQuery(Guid id)
         {
             Id = id;
 
-            IsDeleted = isDeleted;
         }
     }
 }

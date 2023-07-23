@@ -5,17 +5,17 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3C1DC22-6869-45B7-AA3D-566CE951E61F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{AA815962-0EBA-4BAB-A67E-3857845992AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{AA815962-0EBA-4BAB-A67E-3857845992AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{5BE8356F-29AB-48FD-9CAA-2DF95335CB4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{5BE8356F-29AB-48FD-9CAA-2DF95335CB4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{41CFC2AD-CB1D-4D96-9C26-C36E7AD7F16C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{41CFC2AD-CB1D-4D96-9C26-C36E7AD7F16C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "src\WebApi\WebApi.csproj", "{BEADC059-7164-464D-BA7E-03B7123F1762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "src\WebApi\WebApi.csproj", "{BEADC059-7164-464D-BA7E-03B7123F1762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wasm", "src\Wasm\Wasm.csproj", "{2BFDBE93-2471-4E83-A490-47CE6403408E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wasm", "src\Wasm\Wasm.csproj", "{2BFDBE93-2471-4E83-A490-47CE6403408E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrawlerService", "src\WorkerSelenium\CrawlerService.csproj", "{B0170D8C-393E-413C-8B1A-A9EAF7AD4C26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrawlerService", "src\CrawlerService\CrawlerService.csproj", "{53650124-79DB-4C83-8894-539312BC7755}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +43,10 @@ Global
 		{2BFDBE93-2471-4E83-A490-47CE6403408E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BFDBE93-2471-4E83-A490-47CE6403408E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BFDBE93-2471-4E83-A490-47CE6403408E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0170D8C-393E-413C-8B1A-A9EAF7AD4C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0170D8C-393E-413C-8B1A-A9EAF7AD4C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0170D8C-393E-413C-8B1A-A9EAF7AD4C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0170D8C-393E-413C-8B1A-A9EAF7AD4C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53650124-79DB-4C83-8894-539312BC7755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53650124-79DB-4C83-8894-539312BC7755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53650124-79DB-4C83-8894-539312BC7755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53650124-79DB-4C83-8894-539312BC7755}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,7 +57,7 @@ Global
 		{41CFC2AD-CB1D-4D96-9C26-C36E7AD7F16C} = {B3C1DC22-6869-45B7-AA3D-566CE951E61F}
 		{BEADC059-7164-464D-BA7E-03B7123F1762} = {B3C1DC22-6869-45B7-AA3D-566CE951E61F}
 		{2BFDBE93-2471-4E83-A490-47CE6403408E} = {B3C1DC22-6869-45B7-AA3D-566CE951E61F}
-		{B0170D8C-393E-413C-8B1A-A9EAF7AD4C26} = {B3C1DC22-6869-45B7-AA3D-566CE951E61F}
+		{53650124-79DB-4C83-8894-539312BC7755} = {B3C1DC22-6869-45B7-AA3D-566CE951E61F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC43528E-635C-4676-A81E-F09CDD455F44}

@@ -11,5 +11,6 @@ namespace Application.Common.Dtos
         public OrderStatus Status { get; set; }
 
         public DateTimeOffset CreatedOn { get; set; }
+        public int TotalFoundAmount { get; set; }
     }
 }

@@ -1,11 +1,10 @@
 ﻿using Application.Common.Interfaces;
-using Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Orders.Queries.GetById
 {
-    public class OrderGetByIdQueryHandler : IRequestHandler<OrderGetByIdQuery, List<OrderGetByIdDto>>
+    public class OrderGetByIdQueryHandler : IRequestHandler<OrderGetByIdQuery, OrderGetByIdDto>
     {
         private readonly IApplicationDbContext _applicationDbContext;
 
@@ -15,31 +14,24 @@ namespace Application.Features.Orders.Queries.GetById
         }
 
        
-        public async Task<List<OrderGetByIdDto>> Handle(OrderGetByIdQuery request, CancellationToken cancellationToken)
+        public async Task<OrderGetByIdDto> Handle(OrderGetByIdQuery request, CancellationToken cancellationToken)
         {
-            var dbQuery = _applicationDbContext.Orders.AsQueryable();
+            var order = await _applicationDbContext.Orders
+            .Where(x => x.Id == request.Id)
+            .FirstOrDefaultAsync();
 
-            dbQuery = dbQuery.Where(x => x.Id == request.Id);
+            if (order is null) throw new ArgumentNullException(nameof(request.Id));
 
-            var orders = await dbQuery.ToListAsync(cancellationToken);
-
-            var orderDtos = MapAddressesToGetByIdDtos(orders);
-
-            return orderDtos.ToList();
-        }
-        private IEnumerable<OrderGetByIdDto> MapAddressesToGetByIdDtos(List<Order> orders)
-        {
-            foreach (var order in orders)
+            return new OrderGetByIdDto()
             {
-                yield return new OrderGetByIdDto()
-                {
-                    Id = order.Id,
-                    RequestedAmount = order.RequestedAmount,
-                    TotalFoundAmount = order.TotalFoundAmount,
-                    ProductCrawlType = order.ProductCrawlType,
-                    CreatedOn = order.CreatedOn,
-                };
-            }
+                Id = order.Id,
+                UserId = order.UserId,
+                RequestedAmount = order.RequestedAmount,
+                TotalFoundAmount = order.TotalFoundAmount,
+                ProductCrawlType = order.ProductCrawlType,
+                CreatedOn = order.CreatedOn,
+            };
         }
+
     }
 }

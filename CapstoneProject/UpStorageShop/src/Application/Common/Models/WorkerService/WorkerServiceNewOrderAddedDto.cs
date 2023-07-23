@@ -1,4 +1,5 @@
 ﻿using Application.Features.Orders.Queries.GetById;
+using Microsoft.Extensions.Primitives;
 
 namespace Application.Common.Models.WorkerService
 {
@@ -11,6 +12,11 @@ namespace Application.Common.Models.WorkerService
         {
             Order = order;
 
+            AccessToken = accessToken;
+        }
+
+        public WorkerServiceNewOrderAddedDto(string accessToken)
+        {
             AccessToken = accessToken;
         }
     }

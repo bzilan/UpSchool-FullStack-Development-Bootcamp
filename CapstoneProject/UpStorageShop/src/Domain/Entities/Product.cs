@@ -17,5 +17,7 @@ namespace Domain.Entities
         public decimal Price { get; set; }
 
         public decimal? SalePrice { get; set; }
+
+        public DateTimeOffset CreatedOn { get; set; }
     }
 }

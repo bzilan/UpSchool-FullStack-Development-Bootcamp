@@ -1,4 +1,5 @@
-﻿using Application.Common.Interfaces;
+﻿using Application.Common.Dtos;
+using Application.Common.Interfaces;
 using Microsoft.AspNetCore.SignalR;
 using WebApi.Hubs;
 
@@ -18,14 +19,14 @@ namespace WebApi.Services
             return _hubContext.Clients.All.SendAsync("Added", id, cancellationToken);
         }
 
-        public Task UpdatedAsync(Guid id, CancellationToken cancellationToken)
-        {
-            return _hubContext.Clients.All.SendAsync("Updated", id, cancellationToken);
-        }
-
         public Task RemovedAsync(Guid id, CancellationToken cancellationToken)
         {
             return _hubContext.Clients.All.SendAsync("Removed", id, cancellationToken);
+        }
+
+        public Task UpdatedAsync(OrderDto orderDto, CancellationToken cancellationToken)
+        {
+            return _hubContext.Clients.All.SendAsync("Updated", orderDto, cancellationToken);
         }
     }
 }

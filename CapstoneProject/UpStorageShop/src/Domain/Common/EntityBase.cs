@@ -6,6 +6,5 @@
         public DateTimeOffset CreatedOn { get; set; }
         public string? CreatedByUserId { get; set; }
         public DateTimeOffset? DeletedOn { get; set; }
-        public bool IsDeleted { get ; set ; }
     }
 }

@@ -13,10 +13,12 @@ namespace Application.Features.Orders.Commands.Remove
     public class OrderRemoveCommandHandler : IRequestHandler<OrderRemoveCommand, Response<Guid>>
     {
         private readonly IApplicationDbContext _applicationDbContext;
+        private readonly IOrderHubService _orderHubService;
 
-        public OrderRemoveCommandHandler(IApplicationDbContext applicationDbContext)
+        public OrderRemoveCommandHandler(IApplicationDbContext applicationDbContext, IOrderHubService orderHubService)
         {
             _applicationDbContext = applicationDbContext;
+            _orderHubService = orderHubService;
         }
         public async Task<Response<Guid>> Handle(OrderRemoveCommand request, CancellationToken cancellationToken)
         {
@@ -26,6 +28,7 @@ namespace Application.Features.Orders.Commands.Remove
             _applicationDbContext.Orders.Remove(order);
 
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
+            await _orderHubService.RemovedAsync(order.Id, cancellationToken);
 
             return new Response<Guid>("Order successfully removed.", order.Id);
         }

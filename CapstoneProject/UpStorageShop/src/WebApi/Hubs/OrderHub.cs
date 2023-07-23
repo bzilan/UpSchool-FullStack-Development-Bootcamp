@@ -26,7 +26,7 @@ namespace WebApi.Hubs
 
             var orderGetById = await Mediator.Send(new OrderGetByIdQuery(result.Data));
 
-            //await Clients.All.SendAsync("NewOrderAdded", new WorkerServiceNewOrderAddedDto(orderGetById, accessToken));
+            await Clients.All.SendAsync("NewOrderAdded", new WorkerServiceNewOrderAddedDto(orderGetById, accessToken));
 
             return result.Data;
 

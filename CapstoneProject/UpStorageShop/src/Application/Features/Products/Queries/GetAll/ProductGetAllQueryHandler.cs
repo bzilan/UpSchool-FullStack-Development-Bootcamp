@@ -19,18 +19,31 @@ namespace Application.Features.Products.Queries.GetAll
         {
             var dbQuery = _applicationDbContext.Products.AsQueryable();
 
-            if (request.IsDeleted.HasValue)
-            {
-                dbQuery = dbQuery.Where(x => x.IsDeleted == request.IsDeleted.Value && x.OrderId == request.OrderId);
-            }
-            else
-            {
-                dbQuery = dbQuery.Where(x => x.OrderId == request.OrderId);
-            }
-            var products = await dbQuery.ToListAsync(cancellationToken);
-            var orderDtos = MapProductsToGettAllDtos(products);
+            dbQuery = dbQuery.Where(x => x.OrderId == request.OrderId);
+
+            dbQuery = dbQuery.Include(x => x.Order);
+
+
+            var products=await dbQuery
+                .Select(x => MapToGetAllDto(x))
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
 
             return PaginatedList<ProductGetAllDto>.Create(request.PageNumber, request.PageSize);
+        }
+
+        private static ProductGetAllDto MapToGetAllDto(Product product)
+        {
+            return new ProductGetAllDto()
+            {
+                Id = product.Id,
+                OrderId = product.OrderId,
+                Name = product.Name,
+                Picture = product.Picture,
+                IsOnSale = product.IsOnSale,
+                Price = product.Price,
+                SalePrice = product.SalePrice
+            };
         }
 
         private static IEnumerable<ProductGetAllDto> MapProductsToGettAllDtos(List<Product> products)
@@ -48,7 +61,6 @@ namespace Application.Features.Products.Queries.GetAll
                     IsOnSale = product.IsOnSale,
                     Price = product.Price,
                     SalePrice = product.SalePrice,
-                    IsDeleted = product.IsDeleted,
 
                 };
             }

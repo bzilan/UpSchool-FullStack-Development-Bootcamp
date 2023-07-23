@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Orders.Queries.GetById
 {
-    public class OrderGetByIdQuery:IRequest<List<OrderGetByIdDto>>
+    public class OrderGetByIdQuery:IRequest<OrderGetByIdDto>
     {
         public Guid Id { get; set; }
 

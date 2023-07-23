@@ -44,6 +44,7 @@ namespace Infrastructure.Services
             var user = await _userManager.FindByIdAsync(userId);
 
             return await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
         }
 
         public Task<bool> CheckIfUserExists(string email, CancellationToken cancellationToken)

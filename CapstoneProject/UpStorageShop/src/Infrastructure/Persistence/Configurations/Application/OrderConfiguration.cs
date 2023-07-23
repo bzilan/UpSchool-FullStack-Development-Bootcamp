@@ -31,25 +31,18 @@ namespace Infrastructure.Persistence.Configurations.Application
             builder.Property(x => x.CreatedByUserId).IsRequired(false);
             builder.Property(x => x.CreatedByUserId).HasMaxLength(100);
 
-            //DeletedOn
-            builder.Property(x => x.DeletedOn).IsRequired(false);
-
-            //IsDeleted
-            builder.Property(x => x.IsDeleted).IsRequired();
-            builder.Property(x => x.IsDeleted).HasDefaultValueSql("0");
-            builder.HasIndex(x => x.IsDeleted);
 
 
             // Configure the relationship between Order and Product entities
             builder.HasMany(x => x.Products)
                 .WithOne(x => x.Order)
-                .HasForeignKey(x => x.OrderId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(x => x.OrderId);
+                
 
             builder.HasMany(x => x.OrderEvents)
                .WithOne(x => x.Order)
-               .HasForeignKey(x => x.OrderId)
-               .OnDelete(DeleteBehavior.Cascade);
+               .HasForeignKey(x => x.OrderId);
+               
 
             builder.HasOne<User>().WithMany()
             .HasForeignKey(x => x.UserId);
