@@ -1,3 +1,9 @@
+.App {
+  padding-top: 75px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,50 +46,6 @@
 .read-the-docs {
   color: #8585aa;
 }
-
-/*.dashboard-box {*/
-/*  background-color: transparent !important;*/
-/*}*/
-
-/*@media (min-width: 300px) {*/
-/*  .dashboard-box  {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    border: 0;*/
-/*    width: 70vw;*/
-/*  }*/
-/*}*/
-
-/*@media (min-width: 720px) {*/
-/*  .dashboard-box  {*/
-/*    margin-left: 0;*/
-/*  }*/
-/*}*/
-
-/*@media (max-width: 1300px) {*/
-/*  .dashboard-box  {*/
-/*    margin-left: -2vw;*/
-/*    background-color: purple !important;*/
-/*  }*/
-/*}*/
-
-/*@media (min-width: 1300px) {*/
-/*  .dashboard-box  {*/
-/*    margin-left: -3%;*/
-/*  }*/
-/*}*/
-
-/*@media (min-width: 1500px) {*/
-/*  .dashboard-box  {*/
-/*    margin-left: -7%;*/
-/*  }*/
-/*}*/
-
-/*@media (min-width: 1650px) {*/
-/*  .dashboard-box  {*/
-/*    margin-left: -14%;*/
-/*  }*/
-/*}*/
 
 .top {
   color: black;

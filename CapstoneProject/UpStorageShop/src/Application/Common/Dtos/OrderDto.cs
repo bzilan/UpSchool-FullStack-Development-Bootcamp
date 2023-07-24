@@ -5,7 +5,7 @@ namespace Application.Common.Dtos
     public class OrderDto
     {
         public Guid Id { get; set; }
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
         public int RequestedAmount { get; set; }
         public int TotalFoundAmount { get; set; }
         public ProductCrawlType ProductCrawlType { get; set; }

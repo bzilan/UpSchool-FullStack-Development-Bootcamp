@@ -10,6 +10,7 @@ namespace Infrastructure.Persistence.Configurations.Application
         {
             // ID
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
             // Name
             builder.Property(x => x.Name).IsRequired();
@@ -47,8 +48,7 @@ namespace Infrastructure.Persistence.Configurations.Application
             // Configure the relationship between Product and Order entities
             builder.HasOne(x => x.Order)
                 .WithMany(x => x.Products)
-                .HasForeignKey(x => x.OrderId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(x => x.OrderId);
 
             builder.ToTable("Products");
         }

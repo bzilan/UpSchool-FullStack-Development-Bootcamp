@@ -1,5 +1,6 @@
 ﻿using Application.Common.Dtos;
 using Application.Common.Models.WorkerService;
+using Application.Features.OrderEvents.Commands.Add;
 using Application.Features.Orders.Commands.Add;
 using Domain.Entities;
 using Domain.Enums;
@@ -7,8 +8,10 @@ using Domain.Utilities;
 using Microsoft.AspNetCore.SignalR.Client;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using static Domain.Utilities.SignalRMethodKeys;
 
 namespace CrawlerService
 {
@@ -16,11 +19,12 @@ namespace CrawlerService
     {
         private readonly IWebDriver _driver;
         private readonly List<Product> Products;
-        //private Guid orderId;
         private readonly HubConnection _orderHubConnection;
         private readonly HubConnection _seleniumLogHubConnection;
         private readonly HttpClient _httpClient;
         private string access_token;
+        private int productCount = 0;
+        private Guid orderId;
 
         public Crawler(HttpClient httpClient)
         {
@@ -77,7 +81,6 @@ namespace CrawlerService
             {
                 await _seleniumLogHubConnection.InvokeAsync("SendLogNotificationAsync", CreateLog("Bot started."));
                 Console.WriteLine("How many items do you want to crawl?");
-                int productCount;
                 if (!int.TryParse(Console.ReadLine(), out productCount))
                 {
                     Console.WriteLine("Invalid input! Please enter a number.");
@@ -91,36 +94,61 @@ namespace CrawlerService
 
                 string productOption = Console.ReadLine();
 
-                var orderAddRequest = new OrderAddCommand()
-                {
-                    RequestedAmount = productCount,
-                    TotalFoundAmount = 0,
-                    ProductCrawlType = orderDto.ProductCrawlType,
-                };
+                var orderAddRequest = new OrderAddCommand();
 
                 switch (productOption.ToLower())
                 {
                     case "a":
-                        orderAddRequest.ProductCrawlType = ProductCrawlType.All;
+                        orderAddRequest = new OrderAddCommand()
+                        {
+                            Id = Guid.NewGuid(),
+                            ProductCrawlType = ProductCrawlType.All,
+                            CreatedOn = DateTimeOffset.Now,
+                            TotalFoundAmount = 0,
+                            RequestedAmount = 0,
+
+                        };
                         break;
                     case "b":
-                        orderAddRequest.ProductCrawlType = ProductCrawlType.OnDiscount;
+                        orderAddRequest = new OrderAddCommand()
+                        {
+                            Id = Guid.NewGuid(),
+                            ProductCrawlType = ProductCrawlType.OnDiscount,
+                            CreatedOn = DateTimeOffset.Now,
+                            TotalFoundAmount = 0,
+                            RequestedAmount = 0,
+                        };
                         break;
                     case "c":
-                        orderAddRequest.ProductCrawlType = ProductCrawlType.NonDiscount;
+                        orderAddRequest = new OrderAddCommand()
+                        {
+                            Id = Guid.NewGuid(),
+                            ProductCrawlType = ProductCrawlType.NonDiscount,
+                            CreatedOn = DateTimeOffset.Now,
+                            TotalFoundAmount = 0,
+                            RequestedAmount = 0,
+                        };
                         break;
                     default:
                         Console.WriteLine("Invalid option! Please use a valid option.");
                         break;
                 }
 
-                var response = await _httpClient.PostAsJsonAsync("Orders/Add", orderAddRequest);
-                if (!response.IsSuccessStatusCode)
+                var orderAddResponse = await _httpClient.PostAsJsonAsync("Orders/Add", orderAddRequest);
+                if (!orderAddResponse.IsSuccessStatusCode)
                 {
-                    await _seleniumLogHubConnection.InvokeAsync("SendLogNotificationAsync", CreateLog($"Failed to add order: {response.StatusCode}"));
+                    await _seleniumLogHubConnection.InvokeAsync("SendLogNotificationAsync", CreateLog($"Failed to add order: {orderAddResponse.StatusCode}"));
                 }
 
-                await _seleniumLogHubConnection.InvokeAsync("SendLogNotificationAsync", CreateLog("Bot stopped."));
+                var orderEventAddRequest = new OrderEventAddCommand()
+                {
+                    OrderId = orderId,
+                    Status = OrderStatus.BotStarted,
+                };
+
+                var orderEventAddResponse = await _httpClient.PostAsJsonAsync( "OrderEvents/Add", orderEventAddRequest);
+
+                await _seleniumLogHubConnection.InvokeAsync("SendLogNotificationAsync", CreateLog(OrderStatus.BotStarted.ToString()));
 
                 _driver.Quit();
 
@@ -130,14 +158,10 @@ namespace CrawlerService
             {
                 Console.WriteLine(ex.ToString());
             }
-        }
 
-        async Task CrawlProductsAsync(OrderDto orderDto)
-        {
             List<Product> products = new List<Product>();
 
             await _seleniumLogHubConnection.InvokeAsync("SendLogNotificationAsync", CreateLog("Bot started."));
-            int productCount = 0;
             int page = 1;
             while (products.Count < productCount)
             {
@@ -197,8 +221,6 @@ namespace CrawlerService
                 await _seleniumLogHubConnection.StopAsync();
                 await _orderHubConnection.StopAsync();
             }
-
-            
         }
         SeleniumLogDto CreateLog(string message) => new SeleniumLogDto(message);
     }

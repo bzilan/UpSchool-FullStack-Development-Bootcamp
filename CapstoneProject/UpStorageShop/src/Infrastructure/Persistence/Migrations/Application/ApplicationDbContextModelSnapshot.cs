@@ -45,7 +45,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -132,9 +131,9 @@ namespace Infrastructure.Persistence.Migrations.Application
 
             modelBuilder.Entity("Domain.Settings.NotificationSettings", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("EmailAddress")
                         .HasColumnType("longtext");
@@ -150,7 +149,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                         .HasDefaultValueSql("0");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");

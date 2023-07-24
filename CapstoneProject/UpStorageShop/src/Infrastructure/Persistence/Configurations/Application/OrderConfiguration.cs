@@ -11,6 +11,7 @@ namespace Infrastructure.Persistence.Configurations.Application
         {
             // ID
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
             builder.Property(x => x.RequestedAmount)
                 .IsRequired();
@@ -44,8 +45,8 @@ namespace Infrastructure.Persistence.Configurations.Application
                .HasForeignKey(x => x.OrderId);
                
 
-            builder.HasOne<User>().WithMany()
-            .HasForeignKey(x => x.UserId);
+            //builder.HasOne<User>().WithMany()
+            //    .HasForeignKey(x => x.UserId);
 
             builder.ToTable("Orders");
         }

@@ -30,11 +30,14 @@ const NavBar = () => {
         <Menu.Item as={NavLink} to="/dashboard">
           Dashboard
         </Menu.Item>
-        <Menu.Item as={NavLink} to="/notifications">
-          Notifications
-        </Menu.Item>
         <Menu.Item as={NavLink} to="/crawlerlogs">
           Crawler Logs
+        </Menu.Item>
+        <Menu.Item as={NavLink} to="/orderadd">
+          Order Add
+        </Menu.Item>
+        <Menu.Item as={NavLink} to="/settings">
+          Settings
         </Menu.Item>
         <Menu.Item as={NavLink} to="/hahhahahhahahahh">
           Not Found

@@ -4,7 +4,7 @@ const SettingsPage = () => {
   const [notificationType, setNotificationType] = useState("");
 
   const handleNotificationChange = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     setNotificationType(event.target.value);
   };

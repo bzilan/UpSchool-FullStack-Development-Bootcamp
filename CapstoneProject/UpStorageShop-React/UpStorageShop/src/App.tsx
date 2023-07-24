@@ -14,8 +14,9 @@ import SocialLogin from "./pages/SocialLogin.tsx";
 import OrdersPage from "./pages/OrdersPage.tsx";
 import DashboardPage from "./pages/DashboardPage.tsx";
 import { ProductCrawlType } from "./types/OrderTypes.ts";
-import NotificationsPage from "./pages/NotificationsPage.tsx";
 import CrawlerLogsPage from "./pages/CrawlerLogsPage.tsx";
+import OrderAddPage from "./pages/OrderAddPage.tsx";
+import SettingsPage from "./pages/SettingsPage.tsx";
 
 function App() {
   const navigate = useNavigate();
@@ -78,8 +79,9 @@ function App() {
             <Route path="/" element={<LoginPage />} />
             <Route path="/social-login" element={<SocialLogin />} />
             <Route path="/orders" element={<OrdersPage />} />
-            <Route path="/notifications" element={<NotificationsPage />} />
             <Route path="/crawlerlogs" element={<CrawlerLogsPage />} />
+            <Route path="/orderadd" element={<OrderAddPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
             <Route
               path="/dashboards"
               element={<DashboardPage onCrawlStart={handleCrawlStart} />}

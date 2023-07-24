@@ -13,6 +13,11 @@ export type PaginatedList<T> = {
   hasNextPage: boolean;
 };
 
+export type LogDto = {
+  Message: string;
+  SentOn: string;
+};
+
 // export type ExcelData = {
 //   id: number;
 //   date: string;
