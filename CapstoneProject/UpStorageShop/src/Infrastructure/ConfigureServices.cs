@@ -47,7 +47,7 @@ namespace Infrastructure
 
             // Singleton Services
             services.AddSingleton<IEmailService>(new EmailManager(wwwrootPath));
-
+            services.AddSingleton<ITwoFactorService, TwoFactorManager>();
 
             return services;
         }
