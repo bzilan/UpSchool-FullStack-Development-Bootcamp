@@ -13,7 +13,7 @@ export type PaginatedList<T> = {
   hasNextPage: boolean;
 };
 
-export type LogDto = {
+export type Log = {
   Message: string;
   SentOn: string;
 };

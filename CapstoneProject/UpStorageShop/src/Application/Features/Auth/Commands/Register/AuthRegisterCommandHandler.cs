@@ -24,19 +24,19 @@ namespace Application.Features.Auth.Commands.Register
 
             var userId = await _authenticationService.CreateUserAsync(createUserDto, cancellationToken);
 
-            var emailToken = await _authenticationService.GenerateActivationTokenAsync(userId, cancellationToken);
+            var emailToken = await _authenticationService.GenerateEmailActivationTokenAsync(userId, cancellationToken);
 
             var fullName = $"{request.FirstName} {request.LastName}";
 
             var jwtDto = _jwtService.Generate(userId, request.Email, request.FirstName, request.LastName);
 
             //Send an Email
-            _emailService.SendEmailConfirmation(new SendEmailConfirmationDto()
-            {
-                Email = request.Email,
-                Name = request.FirstName,
-                Token = emailToken
-            });
+            //_emailService.SendEmailConfirmation(new SendEmailConfirmationDto()
+            //{
+            //    Email = request.Email,
+            //    Name = request.FirstName,
+            //    Token = emailToken
+            //});
 
             return new AuthRegisterDto(request.Email, fullName, jwtDto.AccessToken);
         }

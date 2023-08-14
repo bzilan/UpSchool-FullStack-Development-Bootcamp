@@ -46,25 +46,25 @@ namespace Application.Features.Products.Queries.GetAll
             };
         }
 
-        private static IEnumerable<ProductGetAllDto> MapProductsToGettAllDtos(List<Product> products)
-        {
-            List<ProductGetAllDto> productGetAllDtos = new List<ProductGetAllDto>();
-            foreach (var product in products)
-            {
+        //private static IEnumerable<ProductGetAllDto> MapProductsToGettAllDtos(List<Product> products)
+        //{
+        //    List<ProductGetAllDto> productGetAllDtos = new List<ProductGetAllDto>();
+        //    foreach (var product in products)
+        //    {
 
-                yield return new ProductGetAllDto()
-                {
-                    Id = product.Id,
-                    OrderId = product.OrderId,
-                    Name = product.Name,
-                    Picture = product.Picture,
-                    IsOnSale = product.IsOnSale,
-                    Price = product.Price,
-                    SalePrice = product.SalePrice,
+        //        yield return new ProductGetAllDto()
+        //        {
+        //            Id = product.Id,
+        //            OrderId = product.OrderId,
+        //            Name = product.Name,
+        //            Picture = product.Picture,
+        //            IsOnSale = product.IsOnSale,
+        //            Price = product.Price,
+        //            SalePrice = product.SalePrice,
 
-                };
-            }
-        }
+        //        };
+        //    }
+        //}
     }
 
 }

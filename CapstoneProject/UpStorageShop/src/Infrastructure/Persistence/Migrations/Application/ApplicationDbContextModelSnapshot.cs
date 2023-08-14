@@ -44,9 +44,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                     b.Property<int>("TotalFoundAmount")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("longtext");
-
                     b.HasKey("Id");
 
                     b.ToTable("Orders", (string)null);

@@ -12,15 +12,5 @@ namespace WebApi.Hubs
         {
             await Clients.AllExcept(Context.ConnectionId).SendAsync("NewSeleniumLogAdded", log);
         }
-
-        [Authorize]
-        public async Task SendTokenAsync()
-        {
-            var accessToken = Context.GetHttpContext().Request.Query["access_token"];
-
-            Console.WriteLine(accessToken);
-
-            await Clients.All.SendAsync(SignalRMethodKeys.Log.SendToken, new WorkerServiceNewOrderAddedDto(accessToken));
-        }
     }
 }

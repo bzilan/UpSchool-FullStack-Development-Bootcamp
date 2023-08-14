@@ -13,7 +13,7 @@ namespace Application.Features.Orders.Queries.GetById
 
         public OrderGetByIdQuery(Guid Id)
         {
-           Id = Id;
+           this.Id = Id;
         }
     }
 }

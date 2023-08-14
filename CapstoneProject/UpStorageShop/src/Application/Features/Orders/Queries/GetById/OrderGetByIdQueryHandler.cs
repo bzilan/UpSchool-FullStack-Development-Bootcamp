@@ -25,7 +25,7 @@ namespace Application.Features.Orders.Queries.GetById
             return new OrderGetByIdDto()
             {
                 Id = order.Id,
-                UserId = order.UserId,
+                CreatedByUserId = order.CreatedByUserId,
                 RequestedAmount = order.RequestedAmount,
                 TotalFoundAmount = order.TotalFoundAmount,
                 ProductCrawlType = order.ProductCrawlType,

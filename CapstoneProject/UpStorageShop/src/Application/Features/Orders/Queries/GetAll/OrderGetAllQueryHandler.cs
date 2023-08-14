@@ -31,7 +31,7 @@ namespace Application.Features.Orders.Queries.GetAll
                 yield return new OrderGetAllDto()
                 {
                     Id = order.Id,
-                    UserId = order.UserId,
+                    CreatedByUserId = order.CreatedByUserId,
                     RequestedAmount = order.RequestedAmount,
                     TotalFoundAmount = order.TotalFoundAmount,
                     ProductCrawlType = order.ProductCrawlType,

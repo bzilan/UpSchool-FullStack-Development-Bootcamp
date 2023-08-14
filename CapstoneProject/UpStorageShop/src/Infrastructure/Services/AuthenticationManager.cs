@@ -52,10 +52,6 @@ namespace Infrastructure.Services
             return _userManager.Users.AnyAsync(x => x.Email == email, cancellationToken);
         }
 
-        public Task<string> GenerateActivationTokenAsync(string userId, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<JwtDto> LoginAsync(AuthLoginRequest authLoginRequest, CancellationToken cancellationToken)
         {

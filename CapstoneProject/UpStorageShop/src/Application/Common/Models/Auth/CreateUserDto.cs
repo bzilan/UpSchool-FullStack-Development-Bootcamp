@@ -27,7 +27,7 @@ namespace Application.Common.Models.Auth
                 LastName = this.LastName,
                 UserName = this.Email,
                 CreatedOn = DateTimeOffset.Now,
-                CreatedByUserId = null
+                CreatedByUserId = null,
             };
         }
     }

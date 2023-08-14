@@ -37,8 +37,6 @@ namespace Infrastructure.Persistence.Migrations.Application
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    UserId = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     RequestedAmount = table.Column<int>(type: "int", nullable: false),
                     TotalFoundAmount = table.Column<int>(type: "int", nullable: false),
                     ProductCrawlType = table.Column<int>(type: "int", nullable: false),

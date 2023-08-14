@@ -24,12 +24,9 @@ namespace Application.Features.Orders.Commands.Add
             var order = new Order()
             {
                 Id=request.Id,
-                UserId = _currentUserService.UserId,
-                RequestedAmount = (int)request.RequestedAmount,
-                TotalFoundAmount = (int)request.TotalFoundAmount,
-                ProductCrawlType = request.ProductCrawlType,
-                CreatedOn = DateTimeOffset.Now,
                 CreatedByUserId = _currentUserService.UserId,
+                RequestedAmount = (int)request.RequestedAmount,
+                CreatedOn = DateTimeOffset.Now,
             };
 
 

@@ -15,8 +15,8 @@ import OrdersPage from "./pages/OrdersPage.tsx";
 import DashboardPage from "./pages/DashboardPage.tsx";
 import { ProductCrawlType } from "./types/OrderTypes.ts";
 import CrawlerLogsPage from "./pages/CrawlerLogsPage.tsx";
-import OrderAddPage from "./pages/OrderAddPage.tsx";
 import SettingsPage from "./pages/SettingsPage.tsx";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 function App() {
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ function App() {
   };
 
   useEffect(() => {
-    const jwtJson = localStorage.getItem("upstorage_user");
+    const jwtJson = localStorage.getItem("upstorageshop_user");
 
     if (!jwtJson) {
       navigate("/login");
@@ -57,18 +57,6 @@ function App() {
     });
   }, []);
 
-  const handleLoginOnClick = () => {
-    navigate("/login");
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("crawler_user");
-
-    setAppUser(undefined);
-
-    navigate("/login");
-  };
-
   return (
     <>
       <AppUserContext.Provider value={{ appUser, setAppUser }}>
@@ -78,13 +66,37 @@ function App() {
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/social-login" element={<SocialLogin />} />
-            <Route path="/orders" element={<OrdersPage />} />
-            <Route path="/crawlerlogs" element={<CrawlerLogsPage />} />
-            <Route path="/orderadd" element={<OrderAddPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
+            <Route
+              path="/orders"
+              element={
+                <ProtectedRoute>
+                  <OrdersPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/crawlerlogs"
+              element={
+                <ProtectedRoute>
+                  <CrawlerLogsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <SettingsPage />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/dashboards"
-              element={<DashboardPage onCrawlStart={handleCrawlStart} />}
+              element={
+                <ProtectedRoute>
+                  <DashboardPage onCrawlStart={handleCrawlStart} />
+                </ProtectedRoute>
+              }
             />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

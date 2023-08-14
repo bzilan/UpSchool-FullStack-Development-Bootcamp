@@ -24,7 +24,7 @@ export type OrderGetByIdDto = {
 };
 
 export type OrderAddCommand = {
-  totalFoundAmount: number;
+  id: string;
   requestedAmount: number;
   productCrawlType: ProductCrawlType;
 };

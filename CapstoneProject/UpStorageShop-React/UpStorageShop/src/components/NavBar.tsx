@@ -1,4 +1,4 @@
-import { Container, Menu, Icon, Button } from "semantic-ui-react";
+import { Container, Menu, Icon, Button, Image } from "semantic-ui-react";
 import { useContext } from "react";
 import { AppUserContext } from "../context/StateContext.tsx";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -19,7 +19,11 @@ const NavBar = () => {
     <Menu fixed="top" inverted>
       <Container>
         <Menu.Item as="a" header>
-          UpStorage
+          <Image
+            size="mini"
+            src="/upstorage_logo_730_608 (1).png"
+            style={{ marginRight: "1.5em", maxWidth: "130px" }}
+          />
         </Menu.Item>
         <Menu.Item as={NavLink} to="/">
           Home
@@ -32,9 +36,6 @@ const NavBar = () => {
         </Menu.Item>
         <Menu.Item as={NavLink} to="/crawlerlogs">
           Crawler Logs
-        </Menu.Item>
-        <Menu.Item as={NavLink} to="/orderadd">
-          Order Add
         </Menu.Item>
         <Menu.Item as={NavLink} to="/settings">
           Settings

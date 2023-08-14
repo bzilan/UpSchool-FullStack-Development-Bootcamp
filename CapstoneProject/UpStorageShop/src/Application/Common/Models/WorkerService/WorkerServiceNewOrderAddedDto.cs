@@ -14,10 +14,5 @@ namespace Application.Common.Models.WorkerService
 
             AccessToken = accessToken;
         }
-
-        public WorkerServiceNewOrderAddedDto(string accessToken)
-        {
-            AccessToken = accessToken;
-        }
     }
 }
